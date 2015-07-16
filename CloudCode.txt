@@ -1,0 +1,16 @@
+Parse.Cloud.define("sendPush2Mbl", function(request, response) {
+    Parse.Push.send({
+          channels: [ "R-Peep"],
+          data: {
+            alert: "You got a Visitor!"
+          }
+        }, {
+                success: function() {
+                    response.success("Success");
+                },
+                error: function(error) {
+                    response.failure(" Failed");
+                }
+            });
+ 
+});
